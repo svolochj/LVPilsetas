@@ -1,0 +1,30 @@
+{
+    "sap.app": {
+        "id": "ui5",
+        "type": "application",
+        "title": "LV pilsetas",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "pilsetas_api": {
+                "uri": "/api",
+                "type": "JSON"
+            }
+        }
+    },
+    "sap.ui5": {
+        "dependencies": {"minUI5Version": "1.102.0"},
+        "contentDensities": {"cozy": true,"compact": true},
+        "rootView": {
+            "viewName": "pilsetas.view.App",
+            "type": "XML",
+            "id": "app"
+        },
+        "models": {
+            "pilsetasModel": {
+                "dataSource": "pilsetas_api"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "lvpilsetas",
+  "version": "1.0.0",
+  "description": "Latvijas pilsetas",
+  "main": "./webapp/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+            id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/1.102.0/resources/sap-ui-core.js"
+            
+            data-sap-ui-theme="sap_belize"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-async="true"
+            data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
+            data-sap-ui-resourceroots='{
+                "pilsetas" : "./"
+            }'>
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0guLqUL6Lt7uxB6M4VNWcPj8y7-rnsTA" defer ></script>
+        <style>
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #map {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+    <body class="sapUiBody" id="content">
+        <div
+            data-sap-ui-component
+            data-name="pilsetas"
+            data-id="container"
+            data-settings='{"id" : "lvpilsetas"}'>
+        </div>
+    </body>
+</html>
