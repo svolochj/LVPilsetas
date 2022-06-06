@@ -1,16 +1,20 @@
 {
+    "_version": "1.37.0",
     "sap.app": {
-        "id": "ui5",
+        "id": "pilsetas",
         "type": "application",
         "title": "LV pilsetas",
         "applicationVersion": {
             "version": "1.0.0"
         },
         "dataSources": {
-            "pilsetas_api": {
-                "uri": "/api",
-                "type": "JSON"
-            }
+            "pilsetasapi": {
+                "uri": "/api/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }    
         }
     },
     "sap.ui5": {
@@ -23,7 +27,9 @@
         },
         "models": {
             "pilsetasModel": {
-                "dataSource": "pilsetas_api"
+                "dataSource": "pilsetasapi",
+                "settings": { "synchronizationMode" : "None" }
+                
             }
         }
     }
