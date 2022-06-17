@@ -3,5 +3,12 @@
     "**/.gitignore": true,
     "**/.git": true,
     "**/.vscode": true
-  }
+},
+"sqltools.connections": [
+    {
+        "dialect": "SQLite",
+        "database": "./sqlite.db",
+        "name": "local"
+    }
+]
 }
