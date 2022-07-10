@@ -44,8 +44,8 @@ sap.ui.define([
                 var marker = new google.maps.Marker({
                     position: 	new google.maps.LatLng(pilseta.coord_Lat, pilseta.coord_Long),
                     map: 		this.map,
-                    title: 		pilseta.name
-                    // icon:       pilseta.gerbURL
+                    title: 		pilseta.name,
+                    icon:       pilseta.gerbURL
                 });
             });
         }
