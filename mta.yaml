@@ -2,7 +2,7 @@
 _schema-version: '3.1'
 ID: lvpilsetas
 version: 1.0.0
-description: "76 Latvijas pilstas"
+description: "Latvijas pilsetas"
 parameters:
   enable-parallel-deployments: true
 build-parameters:
