@@ -12,16 +12,23 @@
                 "uri": "/api/",
                 "type": "OData",
                 "settings": {
-                    "odataVersion": "4.0"
+                    "odataVersion": "4.0",
+                    "useBatch": false
                 }
             }    
         }
     },
     "sap.ui5": {
-        "dependencies": {"minUI5Version": "1.102.0"},
+        "dependencies": {"minUI5Version": "1.102.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.f": {}
+            }
+        },
         "contentDensities": {"cozy": true,"compact": true},
         "rootView": {
             "viewName": "pilsetas.view.App",
+            "async": false,
             "type": "XML",
             "id": "app"
         },

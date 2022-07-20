@@ -35,6 +35,33 @@ modules:
     requires:
       - name: lvpilsetas-db
 
+  - name: lvpilsetas-app-content
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - lvpilsetas.zip
+          name: lvpilsetas-ui
+          target-path: resources/
+
+  - name: lvpilsetas-ui
+    type: html5
+    path: app/
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm install
+        - 'npm run build:cf'
+      supported-platforms: []
+    description: Latvijas pilsetas
+
 resources:
   - name: lvpilsetas-db
     type: com.sap.xs.hdi-container
@@ -43,3 +70,9 @@ resources:
       service-plan: hdi-shared
     properties:
       hdi-service-name: lvpilsetas-db
+  
+  - name: html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
