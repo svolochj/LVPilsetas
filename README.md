@@ -1,6 +1,6 @@
 # Welcome to project cities of Latvia.
 
-Private project by SVO for covering all 81 city of Latvia.
+Private project by SVO for covering all 81 city of Latvia. Project is build based on CAP adn SAP UI5 frameworks.
 
 It contains these folders and files, following our recommended project layout:
 
