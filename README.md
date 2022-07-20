@@ -1,4 +1,4 @@
-# Welcome to Latvian towns project.
+# Welcome to Latvia cities project.
 
 Private project by SVO for covering all 81 city of Latvia.
 
