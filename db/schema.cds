@@ -1,15 +1,21 @@
 namespace  model;
 
 entity Pilsetas{
-    name: String(73);
+    
+    key name:           String(73);
 
-    admin_unit: String(200);    
+    name_lv:            String(73);
 
-    coord: coordinates;
+    admin_unit:         String(200);    
 
-    status_republic: String(20);
+    coord:              coordinates;
 
-    gerbURL: String(2000);
+    status_republic:    String(20);
+    status_from:        String(23);
+
+    gerbURL:            String(2000);
+
+    population:         Integer;
 }
 
 type  coordinates: {

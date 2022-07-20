@@ -1,0 +1,16 @@
+###
+GET http://localhost:4004/api 
+
+###
+GET http://localhost:4004/api/pilsetas
+
+###
+GET http://localhost:4004/api/pilsetas/Viesīte
+
+
+###
+GET http://localhost:4004/api/pilsetas/Ikšķile 
+
+###
+GET http://localhost:4004/api/pilsetas('Ikšķile')
+

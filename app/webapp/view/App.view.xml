@@ -2,11 +2,20 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
 
     controllerName="pilsetas.controller.App"
     >
+    
     <App>
-        <core:HTML afterRendering=".onAfterHTMLRendering" content="&lt;div id='map'&gt;&lt;/div&gt;" />
+        <f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Solid">
+            <f:beginColumnPages>
+                <mvc:XMLView id="mapView" viewName="pilsetas.view.Map"/>
+		    </f:beginColumnPages>
+            <f:midColumnPages>
+                <mvc:XMLView id="detailView" viewName="pilsetas.view.Detail"/>
+            </f:midColumnPages>
+        </f:FlexibleColumnLayout>
     </App>
     
 </mvc:View>
