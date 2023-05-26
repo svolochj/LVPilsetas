@@ -26,6 +26,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: lvpilsetas-db
+      - name: lvpilsetas-auth
 
   - name: lvpilsetas-db-deployer
     type: hdb
@@ -52,7 +53,7 @@ modules:
 
   - name: lvpilsetas-ui
     type: html5
-    path: app/
+    path: app/pilsetasonmap/
     build-parameters:
       build-result: dist
       builder: custom
@@ -62,6 +63,22 @@ modules:
       supported-platforms: []
     description: Latvijas pilsetas
 
+  - name: lvpilsetas
+    type: approuter.nodejs
+    path: app/ # from cds.env.folders. Consider also cds.env.build.target -> gen/app
+    parameters:
+      keep-existing-routes: true
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api # must be used in xs-app.json as well
+          url: ~{srv-url}
+          forwardAuthToken: true
+      - name: lvpilsetas-auth
+
 resources:
   - name: lvpilsetas-db
     type: com.sap.xs.hdi-container
@@ -70,9 +87,19 @@ resources:
       service-plan: hdi-shared
     properties:
       hdi-service-name: lvpilsetas-db
-  
+
   - name: html5-repo-host
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
       service-plan: app-host
+
+  - name: lvpilsetas-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: lvpilsetas-${org}-${space}
+        tenant-mode: dedicated

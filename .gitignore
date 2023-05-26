@@ -31,3 +31,5 @@ mta_archives/
 resources/*
 
 app/dist
+package-lock.json
+.vscode/
