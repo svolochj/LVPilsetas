@@ -27,6 +27,7 @@ modules:
     requires:
       - name: lvpilsetas-db
       - name: lvpilsetas-auth
+      - name: lvpilsetas-loggs
 
   - name: lvpilsetas-db-deployer
     type: hdb
@@ -78,6 +79,7 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
       - name: lvpilsetas-auth
+      - name: lvpilsetas-loggs
 
 resources:
   - name: lvpilsetas-db
@@ -103,3 +105,9 @@ resources:
       config:
         xsappname: lvpilsetas-${org}-${space}
         tenant-mode: dedicated
+
+  - name: lvpilsetas-loggs
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite
